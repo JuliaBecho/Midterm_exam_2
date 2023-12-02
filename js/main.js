@@ -1,6 +1,8 @@
 
 window.addEventListener('load', function () {
-    document.getElementById('sign-in-google').addEventListener('click' , function () {
+    document.getElementById('sign-in-google')
+    document.addEventListener('click' , function () { 
+        
         
 
         var provider = new firebase.auth.GoogleAuthProvider();
@@ -17,11 +19,12 @@ window.addEventListener('load', function () {
 
     });
     
-    document.getElementById('sign-in-traditional').addEventListener('click', function(){ 
+    document.getElementById('sign-in-traditional')
+    document.addEventListener('click', function(){ 
 
-        alert('login');
-        var emailTxt = document.getElementById('email').value;
-        var passtxt = document.getElementById('password').value;
+        
+        var emailTxt = document.getElementById('account_email').value;
+        var passtxt = document.getElementById('account_passwd').value;
 
         firebase.auth().signInWithEmailAndPassword(emailTxt, passtxt)
         .then((userCredential) => {
@@ -40,7 +43,8 @@ window.addEventListener('load', function () {
         return "+17782465707";
      }
 
-     document.getElementById('sign-in-phone').addEventListener('click', function() {
+     document.getElementById('sign-in-phone')
+     document.addEventListener('click', function() {
 
     window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
 
@@ -51,7 +55,7 @@ window.addEventListener('load', function () {
      
       window.confirmationResult = confirmationResult;
      
-      const code = '123456'
+    const code = '123456'
       
     confirmationResult.confirm(code).then((result) => {
   
