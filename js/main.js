@@ -39,7 +39,7 @@ window.addEventListener('load', function () {
         return "+17782465707";
      }
 
-     document.getElementById('btn bg-black border w-100 mx-0 text-white').addEventListener('click', function() {
+     document.getElementsByClassName('btn bg-black border w-100 mx-0 text-white').addEventListener('click', function() {
 
     window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
 
@@ -50,7 +50,7 @@ window.addEventListener('load', function () {
     
       window.confirmationResult = confirmationResult;
      
-      const code = '123456'
+      const code = '000000'
       
     confirmationResult.confirm(code).then((result) => {
   
