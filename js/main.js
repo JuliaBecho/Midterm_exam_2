@@ -1,5 +1,6 @@
+
 window.addEventListener('load', function () {
-    document.getElementsByClassName('btn bg-googleplay border w-100 mx-0 text-gray-700').addEventListener('click' , function () {
+    document.getElementById('sign-in-google').addEventListener('click' , function () {
         
 
         var provider = new firebase.auth.GoogleAuthProvider();
@@ -16,7 +17,7 @@ window.addEventListener('load', function () {
 
     });
     
-    document.getElementsByClassName('btn btn-primary').addEventListener('click', function(){ 
+    document.getElementById('sign-in-traditional').addEventListener('click', function(){ 
 
         alert('login');
         var emailTxt = document.getElementById('email').value;
@@ -24,7 +25,7 @@ window.addEventListener('load', function () {
 
         firebase.auth().signInWithEmailAndPassword(emailTxt, passtxt)
         .then((userCredential) => {
-    
+   
         var user = userCredential.user;
     
      })
@@ -39,7 +40,7 @@ window.addEventListener('load', function () {
         return "+17782465707";
      }
 
-     document.getElementsByClassName('btn bg-black border w-100 mx-0 text-white').addEventListener('click', function() {
+     document.getElementById('sign-in-phone').addEventListener('click', function() {
 
     window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
 
@@ -47,17 +48,19 @@ window.addEventListener('load', function () {
      const appVerifier = window.recaptchaVerifier;
     firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
     .then((confirmationResult) => {
-    
+     
       window.confirmationResult = confirmationResult;
      
-      const code = '000000'
+      const code = '123456'
       
     confirmationResult.confirm(code).then((result) => {
   
      const user = result.user;
+  
     }).catch((error) => {
+ 
     });
-      // ...
+      
     }).catch((error) => {
       alert(error);
     });
