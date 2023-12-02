@@ -27,6 +27,8 @@
   <link rel="apple-touch-icon"
     href="https://cctb-assets.s3-ca-central-1.amazonaws.com/dist/images/apple-touch-icon-585e5d997d.png">
     <script src="js/core.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/firebase.js"></script>
 
 </head>
 
@@ -40,7 +42,7 @@
           <div class="col-sm-8 col-md-6 col-lg-9 col-xl-12 mx-auto max-w-450">
             <img class="rounded mx-auto d-block w-50"
               src="https://guscanada.com/wp-content/uploads/2021/09/CCTB_logo_1_RGB.png">
-            <h1 class="fw-bold mt-3 mb-5 text-purple-500">Sign <span class="text-danger">in</span> <span
+            <h1 id="sign-in-traditional" class="fw-bold mt-3 mb-5 text-purple-500">Sign <span class="text-danger">in</span> <span
                 class="text-primary">CCTB</span></h1>
 
             <form novalidate class="bs-validate" method="get" action="home.html">
@@ -94,7 +96,7 @@
             </div>
 
             <div class="w-100 d-inline-grid gap-auto-3">
-              <a title="Gmail Login" href="#!" class="btn bg-googleplay border w-100 mx-0 text-gray-700">
+              <a id="sign-in-google" title="Gmail Login" href="#" class="btn bg-googleplay border w-100 mx-0 text-gray-700">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                   class="bi bi-google text-white" viewBox="0 0 16 16">
                   <path
@@ -104,7 +106,7 @@
 
 
 
-              <a title="Cellphone login" href="#!" class="btn bg-black border w-100 mx-0 text-white">
+              <a title="Cellphone login" href="#" class="btn bg-black border w-100 mx-0 text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                   class="bi bi-telephone-outbound-fill" viewBox="0 0 16 16">
                   <path fill-rule="evenodd"
